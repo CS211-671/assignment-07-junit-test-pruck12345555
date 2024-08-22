@@ -29,4 +29,11 @@ class UserTest {
         User user = new User("user01", "plain-p@ssw0rd");
         assertTrue(user.isUsername("user01"));
     }
+
+    @Test
+    public void testSetPassword(){
+        User user = new User("user01", "plain-p@ssw0rd");
+        user.setPassword("plain-p@ssward");
+        assertTrue(user.validatePassword("plain-p@ssward"));
+    }
 }
